@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+	<script async="true" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=AM_CHTML"> </script>
+	<script src="./common.js"></script>
+	<title>Secret Santa - Sixth Problem</title>
+
+	<script>
+		const Messages =
+		[
+			"are we rejuvinated yet?",
+			"good.",
+		];
+
+		$(() => 
+		{
+			Speaker = $("#speaker");
+			Speaker.hide();
+			
+			CreateMessageChain(Speaker, Messages, () =>
+			{
+				$("#problem").fadeIn();
+			});
+
+			$("form").submit(HandleSubmit);
+		});
+	</script>
+</head>
+<body class="bg-gray-900 w-screen h-screen flex flex-col items-center justify-center">
+	<p id="speaker" class="text-gray-100"></p>
+	<div class="hidden" id="problem">
+		<div class="center text-gray-100 cmath">
+			Figuren visar ett koordinatsystem med de båda linjerna `L_1` och `L_2`. <br>
+			Linje `L_1` har ekvationen `y=2x-2` och linje `L_2` har ekvationen `y = kx + m` <br>
+			<br>
+			Linjerna skär varandra i punkten (3, 4) och bildar tillsammans med den positiva `x`-axeln en triangel med arean `12 a.e.`
+
+			<div class="flex py-3">
+				<img class="w-96" src="graph-six.png" alt="" srcset="">
+			</div>
+
+			Bestäm ekvationen för `L_2`.
+		</div>
+		<br>
+		<div class="bg-gray-800 shadow-md rounded p-4">
+			<form class="flex space-x-5">
+				<input id="input" class="shadow appearance-none border rounded w-full py-2 px-3 bg-slate-600 border-gray-500 text-gray-100 leading-tight focus:outline-none focus:shadow-outline" id="answer" type="text" placeholder="Answer like y=4x+4 or y=-2x+6 (x must be first)">
+				<button class="bg-green-600 hover:bg-green-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>
+			</form>
+			<p></p>
+		</div>
+	</div>
+</body>
+</html>

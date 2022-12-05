@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<title>Secret Santa</title>
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+	<script src="./common.js"></script>
+
+	<script>
+		const Messages =
+		[
+			"well",
+			"I kinda pranked you",
+			"there is a present for you",
+			"but I thought it was boring to just give it to you",
+			"so, I devised a little plan",
+			"you see, you will face a couple of math problems",
+			"if you solve them, I will give you the key to the treasure that the box contains",
+			"if you cannot solve them within 48 hours...",
+			"then the box will self-destruct",
+			"good luck"
+		];
+
+		$(() => 
+		{
+			Speaker = $("#speaker");
+			Speaker.hide();
+			
+			CreateMessageChain(Speaker, Messages, () =>
+			{
+				LoadPage("first.html");
+			});
+		});
+	</script>
+</head>
+<body class="bg-gray-900 w-screen h-screen flex flex-col items-center justify-center">
+	<p id="speaker" class="text-gray-100"></p>
+</body>
+</html>
