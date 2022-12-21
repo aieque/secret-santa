@@ -1,4 +1,4 @@
-const DevMode = true;
+const DevMode = false;
 
 LoadPage = (Name) =>
 {
