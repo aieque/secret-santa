@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<title>Secret Santa</title>
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+	<script src="./common.js"></script>
+
+	<script>
+		$(() => 
+		{
+			$("#content").fadeIn(1000);
+
+			$("#return").on("click", () => {history.back()});
+		});
+	</script>
+</head>
+<body class="bg-gray-900 w-screen h-screen flex flex-col items-center justify-center">
+	<p id="speaker" class="text-gray-100"></p>
+	<div class="hidden" id="content">
+		<p class="text-xl text-gray-100">Ooops, wrong answer buddy!</p>
+		<p class="text-gray-100">Either you got the question wrong, or you entered it in the wrong way.</p>
+		<p class="text-gray-100">If you are certain that you got the question right, just contact santa and tell 'em that his coding's bad.</p>
+		
+		<br>
+
+		<button id="return" class="bg-green-600 hover:bg-green-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Go back</button>
+	</div>
+</body>
+</html>

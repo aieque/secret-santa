@@ -19,6 +19,8 @@
 
 		$(() => 
 		{
+			SaveProgress(1);
+
 			Speaker = $("#speaker");
 			Speaker.hide();
 			
@@ -26,7 +28,7 @@
 			{
 				$("#problem").fadeIn();
 			});
-
+			
 			$("form").submit(HandleSubmit);
 		});
 	</script>
